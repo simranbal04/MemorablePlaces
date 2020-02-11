@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     static ArrayList<String> places = new ArrayList<>();
     static ArrayList<LatLng> locations = new ArrayList<>();
+    static ArrayAdapter arrayAdapter;
 
     public ListView listView;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         places.add("Add a new Place...");
         locations.add(new LatLng(0,0));
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,places);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,places);
 
         listView.setAdapter(arrayAdapter);
 
