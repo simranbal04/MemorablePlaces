@@ -157,8 +157,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         }
+        else {
+//            mMap.clear();
+            Location placelocation = new Location(LocationManager.GPS_PROVIDER);
+            placelocation.setLatitude( MainActivity.locations.get(intent.getIntExtra("placeNumber", 0)).latitude );
+            placelocation.setLongitude( MainActivity.locations.get(intent.getIntExtra("placeNumber", 0)).longitude );
+
+            centreMapLocation(placelocation,MainActivity.places.get(intent.getIntExtra("placeNumber",0)));
+//            mMap.addMarker(new MarkerOptions().position(MainActivity.locations.get(intent.getIntExtra("placeNumber", 0))).title(MainActivity.places.get(intent.getIntExtra("placeNumber", 0))));
 
 
+
+        }
 
 
 
